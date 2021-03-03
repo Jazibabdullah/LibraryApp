@@ -23,7 +23,7 @@ export const mainReducer = (state = initial_state, action) => {
     case SETAPIDATA:
       return {...state, DATA: action.data, FETCHING: false, ERROR: null};
     case GETAPIDATAFAILURE:
-      return {...state, FETCHING: true,ERROR: true};
+      return {...state, FETCHING: false, ERROR: true};
     case GETBESTSELLERSDATA:
       return {...state, FETCHING: true, ERROR: null};
     case SETBESTSELLERSDATA:
@@ -34,7 +34,7 @@ export const mainReducer = (state = initial_state, action) => {
         ERROR: null,
       };
     case GETBESTSELLERSDATAFAILURE:
-      return {...state, ERROR: true,FETCHING: false,};
+      return {...state, ERROR: true, FETCHING: false};
     case GETSPECIFICCATDATA:
       return {...state, FETCHING: true, ERROR: null};
     case SETSPECIFICCATDATA:
