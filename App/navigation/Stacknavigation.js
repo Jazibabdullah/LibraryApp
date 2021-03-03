@@ -7,7 +7,7 @@ import SearchScreen from '../container/Search/Search';
 import BooksScreen from '../container/Books/Books';
 import BookDetailScreen from '../container/BookDetail/BookDetail';
 import RegisterScreen from '../container/Register/Register';
-import HomepraScreen from '../container/Home/Homepra';
+
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 const Stack = createStackNavigator();
@@ -15,11 +15,6 @@ function Stacknavigation() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        {/* <Stack.Screen
-          name="HomepraScreen"
-          component={HomepraScreen}
-          options={{headerShown: false}}
-        /> */}
         <Stack.Screen
           name="LoginScreen"
           component={LoginScreen}
