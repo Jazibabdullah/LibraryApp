@@ -9,7 +9,7 @@ export default StyleSheet.create({
   logocontainer: {
     justifyContent: 'center',
     alignItems: 'center',
-    
+
     paddingTop: '4%',
   },
   item: {
@@ -41,6 +41,11 @@ export default StyleSheet.create({
     padding: 20,
     marginHorizontal: '7%',
     marginTop: 10,
+  },
+  extraview: {
+    // backgroundColor: 'grey',
+    width: 50,
+    height: 50,
   },
   text: {
     color: 'white',

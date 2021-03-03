@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import {BlurView} from '@react-native-community/blur';
 import styles from './LoginStyle';
 import {Container, View, Content} from 'native-base';
 import {TextInput, TouchableOpacity, Image, Text} from 'react-native';
@@ -14,7 +14,9 @@ export default class FABExample extends Component {
     };
   }
   componentDidMount() {
-    console.log(this.Firstname);
+    console.log('====================================');
+    console.log('hello world from login screen ');
+    console.log('====================================');
   }
   disable = () => {
     if (this.state.email == '' || this.state.password == '') {
@@ -79,6 +81,15 @@ export default class FABExample extends Component {
               <Text style={styles.text}>create account</Text>
             </TouchableOpacity>
           </View>
+          {/* <View style={{backgroundColor: 'white'}}>
+            <BlurView
+              // style={styles.extraview}
+              // reducedTransparencyFallbackColor="white"
+              blurType="light"
+              blurAmount={1}>
+              <Text>hello world</Text>
+            </BlurView>
+          </View> */}
         </Content>
       </Container>
     );

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-// import {HelperText} from 'react-native-paper';
+
 import styles from './RegisterStyle';
 import {Container, View, Content} from 'native-base';
 import {
@@ -20,9 +20,7 @@ export default class FABExample extends Component {
       accountcreated: false,
     };
   }
-  componentDidMount() {
-    console.log(this.Firstname);
-  }
+
   disable = () => {
     if (
       this.state.Firstname == '' ||

@@ -8,7 +8,7 @@ import {
   Item,
   Input,
 } from 'native-base';
-import {FlatList, Image, StyleSheet, ImageBackground} from 'react-native';
+import {FlatList, Image, ImageBackground} from 'react-native';
 import styles from './SearchStyle';
 import {
   getapidata,

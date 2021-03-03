@@ -8,27 +8,8 @@ import {getcategoriesdata} from '../../res/functions';
 import SkeletonPlaceholder from 'react-native-skeleton-placeholder';
 import Colors from '../../Assets/Colors/Colors';
 import styles from './LibraryStyle';
-import {
-  Container,
-  Header,
-  Left,
-  Body,
-  Right,
-  Button,
-  Icon,
-  Segment,
-  Content,
-  Text,
-  View,
-  Title,
-} from 'native-base';
-import {
-  FlatList,
-  Image,
-  TouchableOpacity,
-  StyleSheet,
-  ScrollView,
-} from 'react-native';
+import {Container, Text, View, Title} from 'native-base';
+import {FlatList, Image, TouchableOpacity, ScrollView} from 'react-native';
 import {Card} from 'react-native-paper';
 import {useSelector, useDispatch} from 'react-redux';
 
@@ -39,11 +20,8 @@ const Cat = (props) => {
     dispatch(getapidata());
     dispatch(getspecificcatdata('Combined Print and E-Book Fiction'));
     selection('Combined Print and E-Book Fiction');
-    // dispatch(getspecificcatdata('E-BOOK Fiction'));
   }, []);
   const dispatch = useDispatch();
-
-  // const [categoriesdata, setcategoriesdata] = useState('')
 
   const data = useSelector((state) => state.DATA.results);
   const BESTSELLERSdata = useSelector((state) => state.SPECIFICCATDATA);

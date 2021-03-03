@@ -4,38 +4,20 @@ import {
   getbestsellersdata,
   getspecificcatdata,
 } from '../../Redux/Actions/Actions';
-import {getcategoriesdata} from '../../res/functions';
+
 import SkeletonPlaceholder from 'react-native-skeleton-placeholder';
-import {
-  Container,
-  Header,
-  Left,
-  Body,
-  Right,
-  Button,
-  Icon,
-  Segment,
-  Content,
-  Text,
-  View,
-  Title,
-} from 'native-base';
+import {Container, Button, Segment, Content, Text, View} from 'native-base';
 import styles from './HomeStyle';
-import {FlatList, Image, TouchableOpacity, StyleSheet} from 'react-native';
+import {FlatList, Image, TouchableOpacity} from 'react-native';
 import {Card} from 'react-native-paper';
 import {useSelector, useDispatch} from 'react-redux';
 
 const Cat = (props) => {
-  // useEffect(() => {
-  //   // dispatch(getapidata());
-  //   // getcategoriesdata();
-  // });
   const [Catagories, setCatagories] = useState(true);
   const [BestSeller, setBestSeller] = useState(false);
   useEffect(() => {
     dispatch(getapidata());
     dispatch(getbestsellersdata());
-    // dispatch(getspecificcatdata('E-BOOK Fiction'));
   }, []);
   const dispatch = useDispatch();
 
@@ -49,7 +31,6 @@ const Cat = (props) => {
     if (name == 'Catagories') {
       setCatagories(true);
       setBestSeller(false);
-    
     } else {
       setCatagories(false);
       setBestSeller(true);
