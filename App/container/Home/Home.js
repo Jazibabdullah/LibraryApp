@@ -18,6 +18,9 @@ const Cat = (props) => {
   useEffect(() => {
     dispatch(getapidata());
     dispatch(getbestsellersdata());
+    console.log('====================================');
+    console.log({fetchingstatus});
+    console.log('====================================');
   }, []);
   const dispatch = useDispatch();
 
@@ -26,6 +29,7 @@ const Cat = (props) => {
   const data = useSelector((state) => state.DATA.results);
 
   const BESTSELLERSdata = useSelector((state) => state.BESTSELLERSDATA.results);
+  const fetchingstatus = useSelector((state) => state.FETCHING);
   // {(mydata=useSelector((state) => state.DATA)) ? (const mydata=undefined):(const mydata=false)}
   const selection = (name) => {
     if (name == 'Catagories') {
@@ -58,43 +62,93 @@ const Cat = (props) => {
                   <View></View>
                 </View>
 
-                {data === null ? (
+                {fetchingstatus === true ? (
                   <View style={styles.skeletoncontainer}>
                     <SkeletonPlaceholder
                       backgroundColor="#2f3230" //TRY ADD rgba(255, 255, 255, 0.3) to see the difference
                       highlightColor="#656966" //TRY ADD rgba(255, 255, 255, 0.6) to see the difference
                     >
-                      <SkeletonPlaceholder.Item marginLeft={16}>
-                        <SkeletonPlaceholder.Item
-                          height={20}
-                          borderRadius={4}
-                        />
-                        <SkeletonPlaceholder.Item
-                          marginTop={8}
-                          height={20}
-                          borderRadius={4}
-                        />
-                        <View marginTop={8} height={20} borderRadius={4}></View>
-                        <SkeletonPlaceholder.Item
-                          marginTop={8}
-                          height={20}
-                          borderRadius={4}
-                        />
-                        <SkeletonPlaceholder.Item
-                          marginTop={8}
-                          height={20}
-                          borderRadius={4}
-                        />
-                        <SkeletonPlaceholder.Item
-                          marginTop={8}
-                          height={20}
-                          borderRadius={4}
-                        />
-                        <SkeletonPlaceholder.Item
-                          marginTop={8}
-                          height={20}
-                          borderRadius={4}
-                        />
+                      <SkeletonPlaceholder.Item flexDirection="row">
+                        <SkeletonPlaceholder.Item>
+                          <SkeletonPlaceholder.Item
+                            width={380}
+                            height={40}
+                            borderRadius={4}
+                          />
+
+                          <SkeletonPlaceholder.Item
+                            marginTop={8}
+                            width={380}
+                            height={40}
+                            borderRadius={4}
+                          />
+                          <SkeletonPlaceholder.Item
+                            marginTop={8}
+                            width={380}
+                            height={40}
+                            borderRadius={4}
+                          />
+                          <SkeletonPlaceholder.Item
+                            marginTop={8}
+                            width={380}
+                            height={40}
+                            borderRadius={4}
+                          />
+                          <SkeletonPlaceholder.Item
+                            marginTop={8}
+                            width={380}
+                            height={40}
+                            borderRadius={4}
+                          />
+                          <SkeletonPlaceholder.Item
+                            marginTop={8}
+                            width={380}
+                            height={40}
+                            borderRadius={4}
+                          />
+                          <SkeletonPlaceholder.Item
+                            marginTop={8}
+                            width={380}
+                            height={40}
+                            borderRadius={4}
+                          />
+                          <SkeletonPlaceholder.Item
+                            marginTop={8}
+                            width={380}
+                            height={40}
+                            borderRadius={4}
+                          />
+                          <SkeletonPlaceholder.Item
+                            marginTop={8}
+                            width={380}
+                            height={40}
+                            borderRadius={4}
+                          />
+                          <SkeletonPlaceholder.Item
+                            marginTop={8}
+                            width={380}
+                            height={40}
+                            borderRadius={4}
+                          />
+                          <SkeletonPlaceholder.Item
+                            marginTop={8}
+                            width={380}
+                            height={40}
+                            borderRadius={4}
+                          />
+                          <SkeletonPlaceholder.Item
+                            marginTop={8}
+                            width={380}
+                            height={40}
+                            borderRadius={4}
+                          />
+                          <SkeletonPlaceholder.Item
+                            marginTop={8}
+                            width={380}
+                            height={40}
+                            borderRadius={4}
+                          />
+                        </SkeletonPlaceholder.Item>
                       </SkeletonPlaceholder.Item>
                     </SkeletonPlaceholder>
                   </View>
@@ -128,7 +182,7 @@ const Cat = (props) => {
                 </View>
               </View>
               <View>
-                {BESTSELLERSdata === null ? (
+                {fetchingstatus === true ? (
                   <View style={styles.skeletoncontainer}>
                     <SkeletonPlaceholder
                       backgroundColor="#2f3230" //TRY ADD rgba(255, 255, 255, 0.3) to see the difference
@@ -139,7 +193,7 @@ const Cat = (props) => {
                         alignItems="center">
                         <SkeletonPlaceholder.Item
                           width={64}
-                          height={64}
+                          height={80}
                           borderRadius={5}
                         />
                         <SkeletonPlaceholder.Item marginLeft={16}>
@@ -159,6 +213,122 @@ const Cat = (props) => {
                             width={300}
                             height={20}
                             borderRadius={4}></View>
+                          <SkeletonPlaceholder.Item
+                            marginTop={8}
+                            width={260}
+                            height={20}
+                            borderRadius={4}
+                          />
+                        </SkeletonPlaceholder.Item>
+                      </SkeletonPlaceholder.Item>
+                      <SkeletonPlaceholder.Item
+                        marginTop={32}
+                        flexDirection="row"
+                        alignItems="center">
+                        <SkeletonPlaceholder.Item
+                          width={64}
+                          height={80}
+                          borderRadius={5}
+                        />
+                        <SkeletonPlaceholder.Item marginLeft={16}>
+                          <SkeletonPlaceholder.Item
+                            width={200}
+                            height={20}
+                            borderRadius={4}
+                          />
+                          <SkeletonPlaceholder.Item
+                            marginTop={8}
+                            width={300}
+                            height={20}
+                            borderRadius={4}
+                          />
+                          <SkeletonPlaceholder.Item
+                            marginTop={8}
+                            width={260}
+                            height={20}
+                            borderRadius={4}
+                          />
+                        </SkeletonPlaceholder.Item>
+                      </SkeletonPlaceholder.Item>
+                      <SkeletonPlaceholder.Item
+                        marginTop={32}
+                        flexDirection="row"
+                        alignItems="center">
+                        <SkeletonPlaceholder.Item
+                          width={64}
+                          height={80}
+                          borderRadius={5}
+                        />
+                        <SkeletonPlaceholder.Item marginLeft={16}>
+                          <SkeletonPlaceholder.Item
+                            width={200}
+                            height={20}
+                            borderRadius={4}
+                          />
+                          <SkeletonPlaceholder.Item
+                            marginTop={8}
+                            width={300}
+                            height={20}
+                            borderRadius={4}
+                          />
+                          <SkeletonPlaceholder.Item
+                            marginTop={8}
+                            width={260}
+                            height={20}
+                            borderRadius={4}
+                          />
+                        </SkeletonPlaceholder.Item>
+                      </SkeletonPlaceholder.Item>
+                      <SkeletonPlaceholder.Item
+                        marginTop={32}
+                        flexDirection="row"
+                        alignItems="center">
+                        <SkeletonPlaceholder.Item
+                          width={64}
+                          height={80}
+                          borderRadius={5}
+                        />
+                        <SkeletonPlaceholder.Item marginLeft={16}>
+                          <SkeletonPlaceholder.Item
+                            width={200}
+                            height={20}
+                            borderRadius={4}
+                          />
+                          <SkeletonPlaceholder.Item
+                            marginTop={8}
+                            width={300}
+                            height={20}
+                            borderRadius={4}
+                          />
+                          <SkeletonPlaceholder.Item
+                            marginTop={8}
+                            width={260}
+                            height={20}
+                            borderRadius={4}
+                          />
+                        </SkeletonPlaceholder.Item>
+                      </SkeletonPlaceholder.Item>
+                      <SkeletonPlaceholder.Item
+                        marginTop={32}
+                        flexDirection="row"
+                        alignItems="center">
+                        <SkeletonPlaceholder.Item
+                          width={64}
+                          height={80}
+                          borderRadius={5}
+                        />
+                        <SkeletonPlaceholder.Item marginLeft={16}>
+                          <SkeletonPlaceholder.Item
+                            width={200}
+                            height={20}
+                            borderRadius={4}
+                          />
+                          <SkeletonPlaceholder.Item
+                            marginTop={8}
+                            width={300}
+                            height={20}
+                            borderRadius={4}
+                          />
                           <SkeletonPlaceholder.Item
                             marginTop={8}
                             width={260}

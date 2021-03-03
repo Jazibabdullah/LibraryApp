@@ -2,12 +2,13 @@ import {StyleSheet} from 'react-native';
 import Colors from '../../Assets/Colors/Colors';
 
 export default StyleSheet.create({
-  container: {flex: 1},
+  container: {flex: 1, backgroundColor: 'black'},
   subcontainer: {
     flexDirection: 'row',
-    backgroundColor: 'grey',
     alignItems: 'center',
     flex: 1,
+    borderRadius: 50,
+    backgroundColor: 'black',
   },
 
   disabledfab: {
@@ -15,7 +16,7 @@ export default StyleSheet.create({
     borderRadius: 50,
   },
   enablefab: {
-    backgroundColor: '#5067FF',
+    backgroundColor: 'royalblue',
     borderRadius: 50,
   },
 
@@ -23,9 +24,6 @@ export default StyleSheet.create({
 
   imagebackground: {
     flex: 1,
-    borderRadius: 5,
-    resizeMode: 'contain',
-    borderRadius: 20,
     height: '100%',
   },
   cardsubcontaner: {
@@ -34,7 +32,7 @@ export default StyleSheet.create({
   },
   bookimage: {
     width: '100%',
-    height: 400,
+    height: 350,
     borderRadius: 5,
     resizeMode: 'contain',
   },
