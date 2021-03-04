@@ -2,7 +2,15 @@ import React, {Component} from 'react';
 import {BlurView} from '@react-native-community/blur';
 import styles from './LoginStyle';
 import {Container, View, Content} from 'native-base';
+import {HelperText} from 'react-native-paper';
 import {TextInput, TouchableOpacity, Image, Text} from 'react-native';
+import {
+  required,
+  validateEmail,
+  minLength7,
+  maxLength14,
+  validatePassword,
+} from '../../utils/validators';
 export default class FABExample extends Component {
   constructor(props) {
     super(props);
@@ -13,11 +21,12 @@ export default class FABExample extends Component {
       password: '',
     };
   }
-  componentDidMount() {
-    console.log('====================================');
-    console.log('hello world from login screen ');
-    console.log('====================================');
-  }
+  hasErrors = () => {
+    return !this.state.email.includes('@');
+  };
+  required = () => {
+    return !this.state.email != '';
+  };
   disable = () => {
     if (this.state.email == '' || this.state.password == '') {
       return true;
@@ -43,6 +52,23 @@ export default class FABExample extends Component {
               onChangeText={(text) => this.setState({email: text})}
               style={styles.input}
             />
+
+            <View
+              style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+              <HelperText
+                style={{marginHorizontal: 10}}
+                type="error"
+                visible={this.hasErrors()}>
+                Email address is invalid!
+              </HelperText>
+              <HelperText
+                style={{marginHorizontal: 10}}
+                type="error"
+                visible={this.required()}>
+                required!
+              </HelperText>
+            </View>
+
             <TextInput
               placeholderTextColor="grey"
               secureTextEntry
@@ -81,15 +107,7 @@ export default class FABExample extends Component {
               <Text style={styles.text}>create account</Text>
             </TouchableOpacity>
           </View>
-          {/* <View style={{backgroundColor: 'white'}}>
-            <BlurView
-              // style={styles.extraview}
-              // reducedTransparencyFallbackColor="white"
-              blurType="light"
-              blurAmount={1}>
-              <Text>hello world</Text>
-            </BlurView>
-          </View> */}
+         
         </Content>
       </Container>
     );

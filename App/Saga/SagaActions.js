@@ -69,9 +69,9 @@ function* getspecificcategoriesdata(action) {
     const url = `https://api.nytimes.com/svc/books/v3/lists/${action.catname}?api-key=gYGVOUdSlHqtps4tIxTAfV829PM3vCJ0`;
 
     let resp = yield call(fetch, url);
-    const data = yield resp.json();
 
-    if (resp.ok) {
+    if (resp.status!= null) {
+      const data = yield resp.json();
       yield put(setspecificcatdata(data.results.books));
     } else {
       yield put(getspecificcatdatafailure());
@@ -80,7 +80,7 @@ function* getspecificcategoriesdata(action) {
         ToastAndroid.SHORT,
       );
     }
-    yield put(setbestsellerdata(data));
+    
   } catch (error) {
     yield put(getspecificcatdatafailure());
     // alert(JSON.stringify());

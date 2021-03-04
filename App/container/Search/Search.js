@@ -8,7 +8,8 @@ import {
   Item,
   Input,
 } from 'native-base';
-import {FlatList, Image, ImageBackground} from 'react-native';
+import {FlatList, Image, ImageBackground,YellowBox } from 'react-native';
+YellowBox.ignoreWarnings(['VirtualizedLists should never be nested']);
 import styles from './SearchStyle';
 import {
   getapidata,
@@ -27,6 +28,7 @@ function Search(props) {
     dispatch(getapidata());
     dispatch(getbestsellersdata());
     dispatch(getspecificcatdata('E-BOOK Fiction'));
+    console.disableYellowBox = true;
   }, []);
   const dispatch = useDispatch();
   const fetchingstatus = useSelector((state) => state.FETCHING);

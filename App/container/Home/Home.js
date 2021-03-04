@@ -18,9 +18,6 @@ const Cat = (props) => {
   useEffect(() => {
     dispatch(getapidata());
     dispatch(getbestsellersdata());
-    console.log('====================================');
-    console.log({fetchingstatus});
-    console.log('====================================');
   }, []);
   const dispatch = useDispatch();
 
@@ -156,7 +153,6 @@ const Cat = (props) => {
                   <FlatList
                     data={data}
                     numColumns={1}
-                    keyExtractor={(item, index) => index.toString()}
                     renderItem={({item, index}) => (
                       <TouchableOpacity
                         onPress={() => {
@@ -170,6 +166,7 @@ const Cat = (props) => {
                         </View>
                       </TouchableOpacity>
                     )}
+                    keyExtractor={(item, index) => index.toString()}
                   />
                 )}
               </View>
@@ -371,7 +368,6 @@ const Cat = (props) => {
                 ) : (
                   <FlatList
                     data={BESTSELLERSdata}
-                    keyExtractor={(item, index) => index.toString()}
                     numColumns={1}
                     renderItem={({item, index}) => (
                       <Card
@@ -449,6 +445,7 @@ const Cat = (props) => {
                         </View>
                       </Card>
                     )}
+                    keyExtractor={(item, index) => index.toString()}
                   />
                 )}
               </View>

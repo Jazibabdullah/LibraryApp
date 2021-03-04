@@ -25,6 +25,7 @@ const Cat = (props) => {
 
   const data = useSelector((state) => state.DATA.results);
   const BESTSELLERSdata = useSelector((state) => state.SPECIFICCATDATA);
+  const fetchingstatus = useSelector((state) => state.FETCHING);
 
   const selection = (name) => {
     setActive(name);
@@ -42,40 +43,60 @@ const Cat = (props) => {
                 <View></View>
               </View>
 
-              {data === null ? (
+              {fetchingstatus === true ? (
                 <View style={styles.skeletoncontainer}>
                   <SkeletonPlaceholder
                     backgroundColor="#2f3230" //TRY ADD rgba(255, 255, 255, 0.3) to see the difference
                     highlightColor="#656966" //TRY ADD rgba(255, 255, 255, 0.6) to see the difference
                   >
-                    <SkeletonPlaceholder.Item marginLeft={16}>
-                      <SkeletonPlaceholder.Item height={20} borderRadius={4} />
-                      <SkeletonPlaceholder.Item
-                        marginTop={8}
-                        height={20}
-                        borderRadius={4}
-                      />
-                      <View marginTop={8} height={20} borderRadius={4}></View>
-                      <SkeletonPlaceholder.Item
-                        marginTop={8}
-                        height={20}
-                        borderRadius={4}
-                      />
-                      <SkeletonPlaceholder.Item
-                        marginTop={8}
-                        height={20}
-                        borderRadius={4}
-                      />
-                      <SkeletonPlaceholder.Item
-                        marginTop={8}
-                        height={20}
-                        borderRadius={4}
-                      />
-                      <SkeletonPlaceholder.Item
-                        marginTop={8}
-                        height={20}
-                        borderRadius={4}
-                      />
+                    <SkeletonPlaceholder.Item>
+                      <SkeletonPlaceholder.Item alignItems="center">
+                        <SkeletonPlaceholder.Item
+                          width={90}
+                          height={60}
+                          margin={10}
+                        />
+                        <SkeletonPlaceholder.Item
+                          width={90}
+                          height={60}
+                          margin={10}
+                        />
+                        <SkeletonPlaceholder.Item
+                          width={90}
+                          height={60}
+                          margin={10}
+                        />
+                        <SkeletonPlaceholder.Item
+                          width={90}
+                          height={60}
+                          margin={10}
+                        />
+                        <SkeletonPlaceholder.Item
+                          width={90}
+                          height={60}
+                          margin={10}
+                        />
+                        <SkeletonPlaceholder.Item
+                          width={90}
+                          height={60}
+                          margin={10}
+                        />
+                        <SkeletonPlaceholder.Item
+                          width={90}
+                          height={60}
+                          margin={10}
+                        />
+                        <SkeletonPlaceholder.Item
+                          width={90}
+                          height={60}
+                          margin={10}
+                        />
+                        <SkeletonPlaceholder.Item
+                          width={90}
+                          height={60}
+                          margin={10}
+                        />
+                      </SkeletonPlaceholder.Item>
                     </SkeletonPlaceholder.Item>
                   </SkeletonPlaceholder>
                 </View>
@@ -83,6 +104,7 @@ const Cat = (props) => {
                 <FlatList
                   data={data}
                   numColumns={1}
+                  keyExtractor={(item, index) => index.toString()}
                   renderItem={({item, index}) => (
                     <TouchableOpacity
                       onPress={() => {
@@ -119,7 +141,7 @@ const Cat = (props) => {
               </View>
             </View>
             <View>
-              {BESTSELLERSdata === null ? (
+              {fetchingstatus === true ? (
                 <View style={styles.skeletoncontainer}>
                   <SkeletonPlaceholder
                     backgroundColor="#2f3230" //TRY ADD rgba(255, 255, 255, 0.3) to see the difference
@@ -129,63 +151,61 @@ const Cat = (props) => {
                       flexDirection="row"
                       alignItems="center">
                       <SkeletonPlaceholder.Item
-                        width={64}
-                        height={64}
+                        width={130}
+                        height={190}
+                        margin={5}
                         borderRadius={5}
                       />
-                      <SkeletonPlaceholder.Item marginLeft={16}>
-                        <SkeletonPlaceholder.Item
-                          width={200}
-                          height={20}
-                          borderRadius={4}
-                        />
-                        <SkeletonPlaceholder.Item
-                          marginTop={8}
-                          width={300}
-                          height={20}
-                          borderRadius={4}
-                        />
-                        <View
-                          marginTop={8}
-                          width={300}
-                          height={20}
-                          borderRadius={4}></View>
-                        <SkeletonPlaceholder.Item
-                          marginTop={8}
-                          width={260}
-                          height={20}
-                          borderRadius={4}
-                        />
-                      </SkeletonPlaceholder.Item>
+                      <SkeletonPlaceholder.Item
+                        width={130}
+                        height={190}
+                        borderRadius={5}
+                      />
                     </SkeletonPlaceholder.Item>
                     <SkeletonPlaceholder.Item
-                      marginTop={32}
                       flexDirection="row"
                       alignItems="center">
                       <SkeletonPlaceholder.Item
-                        width={64}
-                        height={80}
+                        width={130}
+                        height={190}
+                        margin={5}
                         borderRadius={5}
                       />
-                      <SkeletonPlaceholder.Item marginLeft={16}>
-                        <SkeletonPlaceholder.Item
-                          width={200}
-                          height={20}
-                          borderRadius={4}
-                        />
-                        <SkeletonPlaceholder.Item
-                          marginTop={8}
-                          width={300}
-                          height={20}
-                          borderRadius={4}
-                        />
-                        <SkeletonPlaceholder.Item
-                          marginTop={8}
-                          width={260}
-                          height={20}
-                          borderRadius={4}
-                        />
-                      </SkeletonPlaceholder.Item>
+                      <SkeletonPlaceholder.Item
+                        width={130}
+                        height={190}
+                        borderRadius={5}
+                      />
+                    </SkeletonPlaceholder.Item>
+                    <SkeletonPlaceholder.Item
+                      flexDirection="row"
+                      alignItems="center">
+                      <SkeletonPlaceholder.Item
+                        width={130}
+                        height={190}
+                        margin={5}
+                        borderRadius={5}
+                      />
+                      <SkeletonPlaceholder.Item
+                        width={130}
+                        height={190}
+                        borderRadius={5}
+                      />
+                    </SkeletonPlaceholder.Item>
+                    <SkeletonPlaceholder.Item
+                      flexDirection="row"
+                      alignItems="center">
+                      <SkeletonPlaceholder.Item
+                        width={130}
+                        height={190}
+                        margin={5}
+                        borderRadius={5}
+                      />
+                      <SkeletonPlaceholder.Item
+                        width={130}
+                        height={190}
+                        borderRadius={5}
+                      />
                     </SkeletonPlaceholder.Item>
                   </SkeletonPlaceholder>
                 </View>
@@ -193,6 +213,7 @@ const Cat = (props) => {
                 <FlatList
                   data={BESTSELLERSdata}
                   numColumns={2}
+                  keyExtractor={(item, index) => index.toString()}
                   renderItem={({item, index}) => (
                     <Card
                       style={styles.cardcontainer}

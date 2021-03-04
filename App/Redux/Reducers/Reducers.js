@@ -11,7 +11,7 @@ import {
 } from '../Actions/Types';
 const initial_state = {
   ERROR: null,
-  FETCHING:false,
+  FETCHING: false,
   DATA: {},
   BESTSELLERSDATA: {},
   SPECIFICCATDATA: {},
