@@ -21,7 +21,7 @@ const Cat = (props) => {
   const dispatch = useDispatch();
 
   const data = useSelector((state) => state.SPECIFICCATDATA);
-
+//testing
   const BESTSELLERSdata = useSelector((state) => state.BESTSELLERSDATA.results);
   return (
     <Container>
