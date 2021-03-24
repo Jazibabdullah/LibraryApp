@@ -21,7 +21,7 @@ const Cat = (props) => {
   const dispatch = useDispatch();
 
   const data = useSelector((state) => state.SPECIFICCATDATA);
-//testing
+
   const BESTSELLERSdata = useSelector((state) => state.BESTSELLERSDATA.results);
   return (
     <Container>
@@ -39,7 +39,7 @@ const Cat = (props) => {
                       flexDirection="row"
                       alignItems="center">
                       <SkeletonPlaceholder.Item
-                        width={64}
+                        width={65}
                         height={64}
                         borderRadius={5}
                       />
